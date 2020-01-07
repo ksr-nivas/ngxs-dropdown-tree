@@ -18,7 +18,7 @@ export interface TreeItem {
 export class TreeviewItem {
     private internalDisabled = false;
     private internalChecked = false;
-    private internalCollapsed = false;
+    private internalCollapsed = true;
     private internalChildren: TreeviewItem[];
     text: string;
     value: any;

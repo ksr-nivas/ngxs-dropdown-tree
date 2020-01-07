@@ -2,15 +2,17 @@
   <!-- <button class="btn" [ngClass]="buttonClass" type="button" role="button" ngxsDropdownToggle>
     {{getText()}}
   </button> -->
-  <button class="btn btn-default border form-control" type="button" role="button" ngxsDropdownToggle>
+  <button class="btn btn-default border" type="button" role="button" ngxsDropdownToggle>
     <span *ngIf="getSelection()?.length <= 0" class="text-muted">-- Select --</span>
-    <span *ngFor="let itm of getSelection() | slice:0:3; let idx=index">
+
+    <span *ngFor="let itm of getSelection() | slice:0:5; let idx=index">
       <span class="btn btn-default btn-xs pull-left border sel-item">
         {{itm.text}}
         <a class="close pull-right" (click)="removeItem($event, itm)">&times;</a>
       </span>
     </span>
-    <span *ngIf="getSelection()?.length > 3" class="pull-right">{{getSelection().length - 3}} more...</span>
+
+    <span *ngIf="getSelection()?.length > 5" class="pull-right">{{getSelection().length - 5}} more...</span>
   </button>
   <div ngxsDropdownMenu aria-labelledby="dropdownMenu" (click)="$event.stopPropagation()">
     <div class="dropdown-container">

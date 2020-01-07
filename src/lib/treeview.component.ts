@@ -8,6 +8,8 @@ import { TreeviewHeaderTemplateContext } from './treeview-header-template-contex
 import { TreeviewItemTemplateContext } from './treeview-item-template-context';
 import { TreeviewHelper } from './treeview-helper';
 import { TreeviewItemComponent } from './treeview-item.component';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 class FilterTreeviewItem extends TreeviewItem {
     private readonly refItem: TreeviewItem;
@@ -64,6 +66,8 @@ export class TreeviewComponent implements OnChanges {
     filterItems: TreeviewItem[];
     selection: TreeviewSelection;
 
+    text$ = new Subject<string>();
+
     constructor(
         public i18n: TreeviewI18n,
         private defaultConfig: TreeviewConfig,
@@ -72,6 +76,15 @@ export class TreeviewComponent implements OnChanges {
         this.config = this.defaultConfig;
         this.allItem = new TreeviewItem({ text: 'All', value: undefined });
         this.createHeaderTemplateContext();
+
+        this.text$.pipe(
+            debounceTime(500),
+            distinctUntilChanged()
+        )
+        .subscribe(() => {
+            this.filterChange.emit(this.filterText);
+            this.updateFilterItems();
+        });
     }
 
     get hasFilterItems(): boolean {
@@ -101,8 +114,8 @@ export class TreeviewComponent implements OnChanges {
 
     onFilterTextChange(text: string) {
         this.filterText = text;
-        this.filterChange.emit(text);
-        this.updateFilterItems();
+        // debounce text change by 500ms
+        this.text$.next(text);
     }
 
     onAllCheckedChange() {

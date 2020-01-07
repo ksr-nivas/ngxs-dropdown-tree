@@ -45,9 +45,11 @@ export class DropdownTreeviewComponent {
     removeItem(event: MouseEvent, item: TreeviewItem) {
         event.stopImmediatePropagation();
         item.checked = false;
-        this.treeviewComponent.treeviewItemComponent.checkedChange.emit();
-        // this.treeviewComponent.onItemCheckedChange(item, false);
-        if (!item.collapsed) {
+        this.treeviewComponent.treeviewItemComponent.triggerItemChange(item);
+        
+        if (this.treeviewComponent.selection.checkedItems.length === 0) {
+            this.treeviewComponent.allItem.checked = false;
+            this.treeviewComponent.onAllCheckedChange();
         }
     }
 

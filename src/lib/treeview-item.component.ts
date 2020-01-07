@@ -25,6 +25,12 @@ export class TreeviewItemComponent {
         this.item.collapsed = !this.item.collapsed;
     }
 
+    triggerItemChange(item: TreeviewItem) {
+        this.checkedChange.emit(item.checked);
+        // make sure that the parent correct checked
+        this.item.correctChecked();
+    }
+
     onCheckedChange = () => {
         const checked = this.item.checked;
         if (!isNil(this.item.children) && !this.config.decoupleChildFromParent) {
