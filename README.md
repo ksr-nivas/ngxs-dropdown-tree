@@ -7,10 +7,6 @@ I've updated the packages to support angular 9 and fixed the breaking changes an
 
 Note: The changes done are purely, to meet my requirements only.
 
-<!-- [![Build Status](https://travis-ci.org/leovo2708/ngxs-dropdown-tree.svg)](https://travis-ci.org/leovo2708/ngxs-dropdown-tree)
-[![codecov](https://codecov.io/gh/leovo2708/ngxs-dropdown-tree/badge.svg)](https://codecov.io/gh/leovo2708/ngxs-dropdown-tree)
-[![npm version](https://img.shields.io/npm/v/ngxs-dropdown-tree.svg)](https://www.npmjs.com/package/ngxs-dropdown-tree)
-[![npm](https://img.shields.io/npm/l/ngxs-dropdown-tree.svg)]() -->
 
 # ngxs-dropdown-tree
 
@@ -38,8 +34,8 @@ You can customize CSS yourself to break down dependencies to Bootstrap & Font Aw
 
 ## Demo
 
-<!-- [https://leovo2708.github.io/ngxs-dropdown-tree/](https://leovo2708.github.io/ngxs-dropdown-tree/)
-([Source code](https://github.com/leovo2708/ngxs-dropdown-tree/tree/master/src/demo)) -->
+[https://ksr-nivas.github.io/ngxs-dropdown-tree/](https://ksr-nivas.github.io/ngxs-dropdown-tree/)
+([Source code](https://github.com/ksr-nivas/ngxs-dropdown-tree/tree/master/src/demo))
 
 ## Installation
 
