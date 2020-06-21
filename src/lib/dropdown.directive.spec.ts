@@ -2,7 +2,7 @@ import { Component, DebugElement } from '@angular/core';
 import { TestBed, ComponentFixture, fakeAsync, tick } from '@angular/core/testing';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { expect, createGenericTestComponent, eventHelper } from '../testing';
+import { createGenericTestComponent, eventHelper } from '../testing';
 import { DropdownDirective } from './dropdown.directive';
 import { DropdownToggleDirective } from './dropdown-toggle.directive';
 
@@ -48,7 +48,7 @@ describe('DropdownToggleDirective', () => {
         const fixture = createTestComponent('<div ngxsDropdown></div>');
         fixture.detectChanges();
         const element = fixture.debugElement.query(By.directive(DropdownDirective));
-        expect(element.nativeElement).not.toHaveCssClass('show');
+        expect(element.nativeElement).not.toHaveClass('show');
     });
 
     describe('open', () => {
@@ -57,7 +57,7 @@ describe('DropdownToggleDirective', () => {
             const fixture = createTestComponent('<div ngxsDropdown [open]="open"></div>');
             fixture.detectChanges();
             const element = fixture.debugElement.query(By.directive(DropdownDirective));
-            expect(element.nativeElement).not.toHaveCssClass('show');
+            expect(element.nativeElement).not.toHaveClass('show');
         });
 
         it('should have class "show" if open is true', () => {
@@ -65,7 +65,7 @@ describe('DropdownToggleDirective', () => {
             const fixture = createTestComponent('<div ngxsDropdown [open]="open"></div>');
             fixture.detectChanges();
             const element = fixture.debugElement.query(By.directive(DropdownDirective));
-            expect(element.nativeElement).toHaveCssClass('show');
+            expect(element.nativeElement).toHaveClass('show');
         });
     });
 
@@ -84,7 +84,7 @@ describe('DropdownToggleDirective', () => {
         spy.calls.reset();
         buttons[0].nativeElement.click();
         fixture.detectChanges();
-        expect(element.nativeElement).toHaveCssClass('show');
+        expect(element.nativeElement).toHaveClass('show');
         expect(spy.calls.any()).toBeTruthy();
         let args = spy.calls.mostRecent().args;
         expect(args[0]).toBe(true);
@@ -97,7 +97,7 @@ describe('DropdownToggleDirective', () => {
         spy.calls.reset();
         buttons[1].nativeElement.click();
         fixture.detectChanges();
-        expect(element.nativeElement).not.toHaveCssClass('show');
+        expect(element.nativeElement).not.toHaveClass('show');
         expect(spy.calls.any()).toBeTruthy();
         args = spy.calls.mostRecent().args;
         expect(args[0]).toBe(false);
@@ -110,7 +110,7 @@ describe('DropdownToggleDirective', () => {
         spy.calls.reset();
         buttons[2].nativeElement.click();
         fixture.detectChanges();
-        expect(element.nativeElement).toHaveCssClass('show');
+        expect(element.nativeElement).toHaveClass('show');
         expect(spy.calls.any()).toBeTruthy();
         args = spy.calls.mostRecent().args;
         expect(args[0]).toBe(true);
@@ -118,7 +118,7 @@ describe('DropdownToggleDirective', () => {
         spy.calls.reset();
         buttons[2].nativeElement.click();
         fixture.detectChanges();
-        expect(element.nativeElement).not.toHaveCssClass('show');
+        expect(element.nativeElement).not.toHaveClass('show');
         expect(spy.calls.any()).toBeTruthy();
         args = spy.calls.mostRecent().args;
         expect(args[0]).toBe(false);
@@ -131,7 +131,7 @@ describe('DropdownToggleDirective', () => {
         const element = fixture.debugElement.query(By.directive(DropdownDirective));
         element.triggerEventHandler('keyup.esc', {});
         fixture.detectChanges();
-        expect(element.nativeElement).not.toHaveCssClass('show');
+        expect(element.nativeElement).not.toHaveClass('show');
     });
 
     it('should close if click outside', () => {
@@ -142,7 +142,7 @@ describe('DropdownToggleDirective', () => {
         const button = fixture.debugElement.query(By.css('button'));
         button.nativeElement.click();
         fixture.detectChanges();
-        expect(element.nativeElement).not.toHaveCssClass('show');
+        expect(element.nativeElement).not.toHaveClass('show');
     });
 
     it('should not close if click on toggle element', () => {
@@ -159,6 +159,6 @@ describe('DropdownToggleDirective', () => {
         const button = fixture.debugElement.query(By.css('button'));
         button.nativeElement.click();
         fixture.detectChanges();
-        expect(element.nativeElement).not.toHaveCssClass('show');
+        expect(element.nativeElement).not.toHaveClass('show');
     });
 });

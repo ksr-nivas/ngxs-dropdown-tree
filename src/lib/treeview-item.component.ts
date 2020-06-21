@@ -5,7 +5,7 @@ import { TreeviewConfig } from './treeview-config';
 import { TreeviewItemTemplateContext } from './treeview-item-template-context';
 
 @Component({
-    selector: 'ngxs-treeview-item',
+    selector: 'ngxs-dropdown-tree-item',
     templateUrl: './treeview-item.component.html',
     styleUrls: ['./treeview-item.component.scss']
 })

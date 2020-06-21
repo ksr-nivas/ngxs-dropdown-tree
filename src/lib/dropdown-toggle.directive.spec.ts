@@ -4,7 +4,7 @@ import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { DropdownToggleDirective } from './dropdown-toggle.directive';
 import { DropdownDirective } from './dropdown.directive';
-import { expect, createGenericTestComponent } from '../testing';
+import { createGenericTestComponent } from '../testing';
 
 @Component({
     selector: 'ngxs-test',
@@ -41,7 +41,7 @@ describe('DropdownToggleDirective', () => {
 
     it('should work', () => {
         expect(element).toBeDefined();
-        expect(element.nativeElement).toHaveCssClass('dropdown-toggle');
+        expect(element.nativeElement).toHaveClass('dropdown-toggle')//.toHaveCssClass('dropdown-toggle');
         expect(element.nativeElement.attributes['aria-haspopup'].value).toBe('true');
     });
 

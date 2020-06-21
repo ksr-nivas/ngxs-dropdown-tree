@@ -22,6 +22,7 @@ export class BookComponent implements OnInit {
     });
 
     buttonClasses = [
+        'btn-default border',
         'btn-outline-primary',
         'btn-outline-secondary',
         'btn-outline-success',

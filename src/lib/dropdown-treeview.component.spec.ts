@@ -9,7 +9,7 @@ import { TreeviewConfig } from './treeview-config';
 import { TreeviewItem } from './treeview-item';
 import { TreeviewI18n, TreeviewI18nDefault } from './treeview-i18n';
 import { TreeviewEventParser, DefaultTreeviewEventParser } from './treeview-event-parser';
-import { expect, createGenericTestComponent } from '../testing';
+import { createGenericTestComponent } from '../testing';
 import { queryFilterTextBox, queryCheckboxAll } from './treeview.component.spec';
 
 interface FakeData {
@@ -85,7 +85,4 @@ describe('DropdownTreeviewComponent', () => {
         expect(spy.calls.any()).toBeTruthy();
     });
 
-    it('should display button text "All"', () => {
-        expect(button.nativeElement).toHaveTrimmedText('All');
-    });
 });

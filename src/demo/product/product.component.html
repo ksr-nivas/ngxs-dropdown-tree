@@ -1,10 +1,11 @@
-<ng-template #itemTemplate let-item="item" let-onCollapseExpand="onCollapseExpand" let-onCheckedChange="onCheckedChange">
+<ng-template #itemTemplate let-item="item" let-onCollapseExpand="onCollapseExpand"
+  let-onCheckedChange="onCheckedChange">
   <div class="form-inline row-item">
-    <i *ngIf="item.children" (click)="onCollapseExpand()" aria-hidden="true" class="fa" [class.fa-caret-right]="item.collapsed"
-      [class.fa-caret-down]="!item.collapsed"></i>
+    <i *ngIf="item.children" (click)="onCollapseExpand()" aria-hidden="true" class="fa"
+      [class.fa-caret-right]="item.collapsed" [class.fa-caret-down]="!item.collapsed"></i>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" [(ngModel)]="item.checked" (ngModelChange)="onCheckedChange()" [disabled]="item.disabled"
-        [indeterminate]="item.indeterminate" />
+      <input type="checkbox" class="form-check-input" [(ngModel)]="item.checked" (ngModelChange)="onCheckedChange()"
+        [disabled]="item.disabled" [indeterminate]="item.indeterminate" />
       <label class="form-check-label" (click)="item.checked = !item.checked; onCheckedChange()">
         {{item.text}}
       </label>
@@ -15,7 +16,9 @@
   </div>
 </ng-template>
 <h3>Advanced (
-  <a href="https://github.com/leovo2708/ngxs-treeview/tree/master/src/demo/product" target="_blank">source code</a>)</h3>
+  <a href="https://github.com/ksr-nivas/ngxs-dropdown-tree/tree/master/src/demo/product" target="_blank">source
+    code</a>)
+</h3>
 <ul>
   <li>Using custom TreeviewConfig to set new default configuration</li>
   <li>Using OrderDownlineTreeviewEventParser to get selection by order</li>
@@ -25,8 +28,8 @@
   <div class="col-6">
     <div class="form-group">
       <div class="d-inline-block">
-        <ngxs-treeview [items]="items" [itemTemplate]="itemTemplate" (selectedChange)="onSelectedChange($event)">
-        </ngxs-treeview>
+        <ngxs-dropdown-tree [items]="items" [itemTemplate]="itemTemplate" (selectedChange)="onSelectedChange($event)">
+        </ngxs-dropdown-tree>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TreeviewItem } from '../../lib';
 
+@Injectable()
 export class BookService {
     getBooks(): TreeviewItem[] {
         const itCategory = new TreeviewItem({

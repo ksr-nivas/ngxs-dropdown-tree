@@ -3,7 +3,7 @@ import { TestBed, ComponentFixture, fakeAsync, tick, async, inject } from '@angu
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { slice } from 'lodash';
-import { expect, createGenericTestComponent } from '../testing';
+import { createGenericTestComponent } from '../testing';
 import { TreeviewConfig } from './treeview-config';
 import { TreeviewItemComponent } from './treeview-item.component';
 import { TreeviewItem } from './treeview-item';
@@ -20,7 +20,7 @@ const fakeData: FakeData = {
 };
 
 const testTemplate = fakeItemTemplate
-    + '<ngxs-treeview-item [item]="item" [template]="itemTemplate" (checkedChange)="checkedChange($event)"></ngxs-treeview-item>';
+    + '<ngxs-dropdown-tree-item [item]="item" [template]="itemTemplate" (checkedChange)="checkedChange($event)"></ngxs-dropdown-tree-item>';
 
 @Component({
     selector: 'ngxs-test',
@@ -57,7 +57,7 @@ describe('TreeviewItemComponent', () => {
 
     describe('item', () => {
         it('should not have element with class "treeview-item" if no item provided', () => {
-            const fixture = createTestComponent('<ngxs-treeview-item></ngxs-treeview-item>');
+            const fixture = createTestComponent('<ngxs-dropdown-tree-item></ngxs-dropdown-tree-item>');
             fixture.detectChanges();
             const element = fixture.debugElement.query(By.css('.treeview-item'));
             expect(element).toBeNull();
@@ -65,7 +65,7 @@ describe('TreeviewItemComponent', () => {
 
         it('should have element with class "treeview-item" if binding item', () => {
             fakeData.item = new TreeviewItem({ text: '1', value: 1 });
-            const fixture = createTestComponent('<ngxs-treeview-item [item]="item"></ngxs-treeview-item>');
+            const fixture = createTestComponent('<ngxs-dropdown-tree-item [item]="item"></ngxs-dropdown-tree-item>');
             fixture.detectChanges();
             const element = fixture.debugElement.query(By.css('.treeview-item'));
             expect(element).not.toBeNull();
@@ -107,7 +107,7 @@ describe('TreeviewItemComponent', () => {
             expect(textElement.nativeElement.innerText.trim()).toBe('Parent 1');
             expect(parentCheckbox.nativeElement.checked).toBeTruthy();
             expect(parentCheckbox.nativeElement.disabled).toBeFalsy();
-            expect(collapsedElement.nativeElement).toHaveCssClass('fa-caret-down');
+            expect(collapsedElement.nativeElement).toHaveClass('fa-caret-down');
         });
 
         it('should render "Parent 1", "Child 1" & "Child 2" with checked', () => {
@@ -123,7 +123,7 @@ describe('TreeviewItemComponent', () => {
             }));
 
             it('should invoke onCollapseExpand to change value of collapsed', () => {
-                expect(collapsedElement.nativeElement).toHaveCssClass('fa-caret-right');
+                expect(collapsedElement.nativeElement).toHaveClass('fa-caret-right');
             });
 
             it('should not render children', () => {

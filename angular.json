@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngxs-treeview": {
+    "ngxs-dropdown-tree": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -52,18 +52,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngxs-treeview:build"
+            "browserTarget": "ngxs-dropdown-tree:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngxs-treeview:build:production"
+              "browserTarget": "ngxs-dropdown-tree:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngxs-treeview:build"
+            "browserTarget": "ngxs-dropdown-tree:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "ngxs-treeview-e2e": {
+    "ngxs-dropdown-tree-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "targets": {
@@ -111,7 +111,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngxs-treeview:serve"
+            "devServerTarget": "ngxs-dropdown-tree:serve"
           }
         },
         "lint": {
@@ -128,5 +128,5 @@
       }
     }
   },
-  "defaultProject": "ngxs-treeview"
+  "defaultProject": "ngxs-dropdown-tree"
 }

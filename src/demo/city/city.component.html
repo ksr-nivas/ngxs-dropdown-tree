@@ -1,5 +1,6 @@
 <h3>Pipe & i18n (
-  <a href="https://github.com/leovo2708/ngxs-treeview/tree/master/src/demo/city" target="_blank">source code</a>)</h3>
+  <a href="https://github.com/ksr-nivas/ngxs-dropdown-tree/tree/master/src/demo/city" target="_blank">source code</a>)
+</h3>
 <ul>
   <li>This pipe converts a list of JSON objects to be list of TreeviewItem objects</li>
   <li>No support to pipe JSON object with children property. Need to write a helper to transform them yourself</li>
@@ -19,7 +20,8 @@
     <form class="d-inline-block">
       <label class="col-form-label mr-sm-2">City category</label>
       <div class="d-inline-block">
-        <ngxs-dropdown-treeview [items]="cities | ngxsTreeview:'name'" [buttonClass]="'btn-outline-primary'" (selectedChange)="onSelectedChange($event)">
+        <ngxs-dropdown-treeview [items]="cities | ngxsTreeview:'name'" [buttonClass]="'btn-outline-primary'"
+          (selectedChange)="onSelectedChange($event)">
         </ngxs-dropdown-treeview>
       </div>
     </form>

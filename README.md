@@ -1,18 +1,18 @@
 Originally forked from: https://github.com/leovo2708/ngx-treeview
 
-I've updated all the packages to support angular 8 and fixed the breaking changes and added few new features like
+I've updated the packages to support angular 9 and fixed the breaking changes and added few new features like
 -> Showing selected items on the button.
 -> Deleting the selected items from button itself.
 -> If the number of selected items are more than 3, it will display "2 more..." (inspired by ng-select component).
 
 Note: The changes done are purely, to meet my requirements only.
 
-[![Build Status](https://travis-ci.org/leovo2708/ngxs-treeview.svg)](https://travis-ci.org/leovo2708/ngxs-treeview)
-[![codecov](https://codecov.io/gh/leovo2708/ngxs-treeview/badge.svg)](https://codecov.io/gh/leovo2708/ngxs-treeview)
-[![npm version](https://img.shields.io/npm/v/ngxs-treeview.svg)](https://www.npmjs.com/package/ngxs-treeview)
-[![npm](https://img.shields.io/npm/l/ngxs-treeview.svg)]()
+<!-- [![Build Status](https://travis-ci.org/leovo2708/ngxs-dropdown-tree.svg)](https://travis-ci.org/leovo2708/ngxs-dropdown-tree)
+[![codecov](https://codecov.io/gh/leovo2708/ngxs-dropdown-tree/badge.svg)](https://codecov.io/gh/leovo2708/ngxs-dropdown-tree)
+[![npm version](https://img.shields.io/npm/v/ngxs-dropdown-tree.svg)](https://www.npmjs.com/package/ngxs-dropdown-tree)
+[![npm](https://img.shields.io/npm/l/ngxs-dropdown-tree.svg)]() -->
 
-# ngxs-treeview
+# ngxs-dropdown-tree
 
 An Angular treeview component with checkbox
 
@@ -38,18 +38,18 @@ You can customize CSS yourself to break down dependencies to Bootstrap & Font Aw
 
 ## Demo
 
-[https://leovo2708.github.io/ngxs-treeview/](https://leovo2708.github.io/ngxs-treeview/)
-([Source code](https://github.com/leovo2708/ngxs-treeview/tree/master/src/demo))
+<!-- [https://leovo2708.github.io/ngxs-dropdown-tree/](https://leovo2708.github.io/ngxs-dropdown-tree/)
+([Source code](https://github.com/leovo2708/ngxs-dropdown-tree/tree/master/src/demo)) -->
 
 ## Installation
 
-After install the above dependencies, install `ngxs-treeview` via:
+After install the above dependencies, install `ngxs-dropdown-tree` via:
 ```shell
-npm install ngxs-treeview --save
+npm install ngxs-dropdown-tree --save
 ```
 Once installed you need to import our main module in your application module:
 ```js
-import { TreeviewModule } from 'ngxs-treeview';
+import { TreeviewModule } from 'ngxs-dropdown-tree';
 
 @NgModule({
   declarations: [AppComponent, ...],
@@ -64,12 +64,12 @@ export class AppModule {
 
 #### Treeview:
 ```html
-<ngxs-treeview
+<ngxs-dropdown-tree
     [config]="config"
     [items]="items"
     (selectedChange)="onSelectedChange($event)"
     (filterChange)="onFilterChange($event)">
-</ngxs-treeview>
+</ngxs-dropdown-tree>
 ```
 
 #### Treeview with dropdown:

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TreeviewConfig, TreeviewItem } from '../../lib';
 import { RoomService } from './room.service';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'ngxs-room',
@@ -10,7 +11,7 @@ import { RoomService } from './room.service';
     ]
 })
 export class RoomComponent implements OnInit {
-    items: TreeviewItem[];
+    items$: Observable<TreeviewItem[]>;
     values: any[];
     config = TreeviewConfig.create({
         hasAllCheckBox: true,
@@ -24,6 +25,6 @@ export class RoomComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.items = this.service.getRooms();
+        this.items$ = this.service.getRooms();
     }
 }

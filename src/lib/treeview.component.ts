@@ -46,7 +46,7 @@ class FilterTreeviewItem extends TreeviewItem {
 }
 
 @Component({
-    selector: 'ngxs-treeview',
+    selector: 'ngxs-dropdown-tree',
     templateUrl: './treeview.component.html',
     styleUrls: ['./treeview.component.scss']
 })
@@ -59,7 +59,7 @@ export class TreeviewComponent implements OnChanges {
     @Output() filterChange = new EventEmitter<string>();
     headerTemplateContext: TreeviewHeaderTemplateContext;
 
-    @ViewChild(TreeviewItemComponent, {static: false}) treeviewItemComponent: TreeviewItemComponent;
+    @ViewChild(TreeviewItemComponent) treeviewItemComponent: TreeviewItemComponent;
 
     allItem: TreeviewItem;
     filterText = '';
@@ -81,10 +81,10 @@ export class TreeviewComponent implements OnChanges {
             debounceTime(500),
             distinctUntilChanged()
         )
-        .subscribe(() => {
-            this.filterChange.emit(this.filterText);
-            this.updateFilterItems();
-        });
+            .subscribe(() => {
+                this.filterChange.emit(this.filterText);
+                this.updateFilterItems();
+            });
     }
 
     get hasFilterItems(): boolean {

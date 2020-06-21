@@ -1,7 +1,8 @@
-<ng-template #defaultItemTemplate let-item="item" let-onCollapseExpand="onCollapseExpand" let-onCheckedChange="onCheckedChange">
+<ng-template #defaultItemTemplate let-item="item" let-onCollapseExpand="onCollapseExpand"
+  let-onCheckedChange="onCheckedChange">
   <div class="form-inline row-item">
-    <i *ngIf="item.children" (click)="onCollapseExpand()" aria-hidden="true" class="fa" [class.fa-caret-right]="item.collapsed"
-      [class.fa-caret-down]="!item.collapsed"></i>
+    <i *ngIf="item.children" (click)="onCollapseExpand()" aria-hidden="true" class="fa"
+      [class.fa-caret-right]="item.collapsed" [class.fa-caret-down]="!item.collapsed"></i>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" [(ngModel)]="item.checked" (ngModelChange)="onCheckedChange()"
         [disabled]="item.disabled" [indeterminate]="item.indeterminate" />
@@ -39,14 +40,15 @@
   </div>
 </ng-template>
 <div class="treeview-header">
-  <ng-template [ngTemplateOutlet]="headerTemplate || defaultHeaderTemplate" [ngTemplateOutletContext]="headerTemplateContext">
+  <ng-template [ngTemplateOutlet]="headerTemplate || defaultHeaderTemplate"
+    [ngTemplateOutletContext]="headerTemplateContext">
   </ng-template>
 </div>
 <div [ngSwitch]="hasFilterItems">
   <div *ngSwitchCase="true" class="treeview-container" [style.max-height.px]="maxHeight">
-    <ngxs-treeview-item *ngFor="let item of filterItems" [config]="config" [item]="item" [template]="itemTemplate || defaultItemTemplate"
-      (checkedChange)="onItemCheckedChange(item, $event)">
-    </ngxs-treeview-item>
+    <ngxs-dropdown-tree-item *ngFor="let item of filterItems" [config]="config" [item]="item"
+      [template]="itemTemplate || defaultItemTemplate" (checkedChange)="onItemCheckedChange(item, $event)">
+    </ngxs-dropdown-tree-item>
   </div>
   <div *ngSwitchCase="false" class="treeview-text">
     {{i18n.getFilterNoItemsFoundText()}}
