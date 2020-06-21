@@ -1,12 +1,12 @@
 Originally forked from: https://github.com/leovo2708/ngx-treeview
 
 I've updated the packages to support angular 9 and fixed the breaking changes and added few new features like
--> Showing selected items on the button.
--> Deleting the selected items from button itself.
--> If the number of selected items are more than 3, it will display "2 more..." (inspired by ng-select component).
 
-Note: The changes done are purely, to meet my requirements only.
+* Display selected items on the button.
+* Delete selected items from button itself by clicking small (x) icon.
+* If the number of selected items are more than 5, it will display "2 more..." (inspired by ng-select component).
 
+Note: The changes done are purely, to meet my project's requirements only. You can fork this and make changes to meet your requirements.
 
 # ngxs-dropdown-tree
 
