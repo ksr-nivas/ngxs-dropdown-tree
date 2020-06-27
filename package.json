@@ -1,6 +1,6 @@
 {
   "name": "ngxs-dropdown-tree",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "license": "MIT",
   "description": "An Angular treeview component with checkbox",
   "scripts": {
