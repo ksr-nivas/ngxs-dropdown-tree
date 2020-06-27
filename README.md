@@ -10,7 +10,9 @@ Note: The changes done are purely, to meet my project's requirements only. You c
 
 # ngxs-dropdown-tree
 
-An Angular treeview component with checkbox
+An Angular treeview component with checkboxes
+
+![alt text](https://github.com/ksr-nivas/ngxs-dropdown-tree/blob/master/src/assets/demo.png)
 
 ## Dependencies
 
